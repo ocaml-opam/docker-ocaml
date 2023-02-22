@@ -1,0 +1,12 @@
+Maintainers: Kate Deplaix <kit-ty-kate@outlook.com> (@kit-ty-kate)
+GitRepo: https://github.com/ocaml/docker-ocaml
+
+Tags: 5.0.0-bullseye, 5.0-bullseye, 5-bullseye, bullseye, 5.0.0-debian, 5.0-debian, 5-debian, debian, 5.0.0, 5.0, 5, latest
+Architectures: amd64, arm64v8
+GitCommit: 2ae2e6624858744914bb7c68a2197d7076fa3e93
+Directory: debian
+
+Tags: 5.0.0-alpine3.17, 5.0-alpine3.17, 5-alpine3.17, alpine3.17, 5.0.0-alpine, 5.0-alpine, 5-alpine, alpine
+Architectures: amd64, arm64v8
+GitCommit: 2ae2e6624858744914bb7c68a2197d7076fa3e93
+Directory: alpine

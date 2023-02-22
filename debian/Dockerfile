@@ -1,4 +1,4 @@
-FROM debian
+FROM debian:11
 
 ENV LANG C.UTF-8
 ENV PATH /usr/local/bin:$PATH
