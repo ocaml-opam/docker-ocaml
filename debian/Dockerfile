@@ -31,7 +31,6 @@ ENTRYPOINT ["/bin/bash"]
 ARG OCAML=5.0.0
 ARG DUNE=3.7.0
 RUN touch .bash_profile && \
-    echo >> .bashrc && \
-    echo 'source "${HOME}/.bash_profile"' >> .bashrc && \
+    { echo && echo 'source "${HOME}/.bash_profile"' ; } >> .bashrc && \
     opam init --auto-setup --disable-sandboxing "--compiler=ocaml-base-compiler.${OCAML}" && \
     opam install -y "dune.${DUNE}"
