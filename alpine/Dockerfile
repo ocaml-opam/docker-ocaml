@@ -5,7 +5,7 @@ ENV PATH /usr/local/bin:$PATH
 
 RUN apk update && \
     apk upgrade && \
-    apk add rsync bash diffutils tar curl patch unzip coreutils bubblewrap make gcc libc-dev git bzip2 xz
+    apk add rsync bash diffutils tar curl patch unzip coreutils bubblewrap make gcc libc-dev git bzip2 xz sudo
 
 ARG OPAM=2.1.4
 RUN set -e ; \
@@ -19,7 +19,9 @@ RUN set -e ; \
     echo "${SHA512} /usr/local/bin/opam" | sha512sum --strict --check ; \
     chmod +x /usr/local/bin/opam
 
-RUN adduser -D -u 1000 -g 1000 -s /bin/bash ocaml
+RUN adduser -D -u 1000 -g 1000 -s /bin/bash ocaml && \
+    echo "ocaml ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/ocaml && \
+    chmod 440 /etc/sudoers.d/ocaml
 USER ocaml
 WORKDIR /home/ocaml
 SHELL ["/bin/bash", "--login", "-c"]
